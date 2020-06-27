@@ -5,7 +5,7 @@ with open("README.md", 'r') as fr:
 
 setup(
     name='pyCheckmol',
-    version='1.0.2',
+    version='1.0.0',
     url='https://github.com/jeffrichardchemistry/pyCheckmol',
     license='GNU GPL',
     author='Jefferson Richard',
@@ -16,6 +16,7 @@ setup(
     long_description_content_type = "text/markdown",
     packages=['pyCheckmol'],
     install_requires=['pandas>=0.25.3'],
+	#scripts=['bin/mkhiddendir'],
 	classifiers = [
 		'Intended Audience :: Developers',
 		'Intended Audience :: End Users/Desktop',

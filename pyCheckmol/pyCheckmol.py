@@ -1,11 +1,10 @@
 import subprocess
 import os
 import pandas as pd
-from tempfile import NamedTemporaryFile
 
-class CheckMOl:
+class CheckMol:
     def __init__(self):
-        self.information = ''
+        self.information_ = ''
 
     def functionalGroupSmiles(self, file = '', generate3D=False,justFGcode=True, returnDataframe=True, deleteTMP=True):
         """
@@ -35,7 +34,7 @@ class CheckMOl:
         tmp_file = file[:tmp_file[-1] + 1]
         if generate3D:
             smi2sdf = subprocess.getoutput('babel {} {}tmp.sdf --gen3D'.format(file, tmp_file))
-            fg = CheckMOl.functionalGroups(self, file=tmp_file+'tmp.sdf', justFGcode=justFGcode, returnDataframe=returnDataframe)
+            fg = CheckMol.functionalGroups(self, file=tmp_file+'tmp.sdf', justFGcode=justFGcode, returnDataframe=returnDataframe)
             if deleteTMP:
                 os.remove(tmp_file+'tmp.sdf')
             else:
@@ -43,7 +42,7 @@ class CheckMOl:
             return fg
         else:
             smi2sdf = subprocess.getoutput('babel {} {}tmp.sdf --gen2D'.format(file, tmp_file))
-            fg = CheckMOl.functionalGroups(self, file=tmp_file+'tmp.sdf', justFGcode=justFGcode, returnDataframe=returnDataframe)
+            fg = CheckMol.functionalGroups(self, file=tmp_file+'tmp.sdf', justFGcode=justFGcode, returnDataframe=returnDataframe)
             if deleteTMP:
                 os.remove(tmp_file+'tmp.sdf')
             else:
@@ -87,7 +86,7 @@ class CheckMOl:
 """ if __name__ == '__main__':
     file = '/dados/programas/checkmol/mole3.sdf'
     filesmi = '/dados/programas/checkmol/mole2.smiles'
-    cm = CheckMOl()
+    cm = CheckMol()
     #get = cm.functionalGroups(file, justFGcode=True, returnDataframe=False)
     #print(get)
 
