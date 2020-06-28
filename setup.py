@@ -16,7 +16,7 @@ setup(
     long_description_content_type = "text/markdown",
     packages=['pyCheckmol'],
     install_requires=['pandas>=0.25.3'],
-	#scripts=['bin/mkhiddendir'],
+	scripts=['bin/checkmol-config', 'bin/openbabelDEBIANS-config', 'bin/openbabelSUSE-config', 'bin/pycheckmol-config'],
 	classifiers = [
 		'Intended Audience :: Developers',
 		'Intended Audience :: End Users/Desktop',

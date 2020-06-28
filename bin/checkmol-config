@@ -1,0 +1,9 @@
+#!/bin/bash
+
+echo "Its necessary to download checkmol bin for /usr/bin/ directory. The root's passwords could be necessary."
+echo " "
+sudo wget https://github.com/jeffrichardchemistry/pyCheckmol/raw/master/bin/checkmol -P /usr/bin/ && sudo chmod +x /usr/bin/checkmol
+
+
+
+

@@ -6,7 +6,7 @@ class CheckMol:
     def __init__(self):
         self.information_ = ''
 
-    def functionalGroupSmiles(self, file = '', generate3D=False,justFGcode=True, returnDataframe=True, deleteTMP=True):
+    def functionalGroupSmiles(self, smiles = '', isString=True, generate3D=False,justFGcode=True, returnDataframe=True, deleteTMP=True):
         """
         This funtion returns the Functional groups (FG) information. Each FG is
         labeled with a code. Altogether there are 204 FG labeled. The table with
@@ -15,7 +15,7 @@ class CheckMol:
         
         Arguments
         ---------------------
-        file
+        smiles
             Path to file, must be a smiles: .smiles or .smi
         generate3D
             If true the smiles will be converted into a sdf with 3D coordinates.
@@ -28,23 +28,32 @@ class CheckMol:
             Use only justFGcode=False. If returnDataframe=False the result is a
             dictionary, if True result is a dataframe.
         deleteTMP
-            If True the temporary file will be deleted.
+            If True the temporary file will be deleted. The tmp file is created
+            in $HOME/.pycheckmoltmp/
         """
-        tmp_file = [i for i,x in enumerate(file) if x == '/']
-        tmp_file = file[:tmp_file[-1] + 1]
+
+        homedir = os.getenv("HOME")+'/.pycheckmoltmp/'
+        if isString:
+            f = open(homedir+'smitmp.smiles', 'w')
+            f.write(smiles)
+            f.close()
+
+            smiles = homedir+'smitmp.smiles'
+        
         if generate3D:
-            smi2sdf = subprocess.getoutput('babel {} {}tmp.sdf --gen3D'.format(file, tmp_file))
-            fg = CheckMol.functionalGroups(self, file=tmp_file+'tmp.sdf', justFGcode=justFGcode, returnDataframe=returnDataframe)
+            smi2sdf = subprocess.getoutput('babel {} {}tmp.sdf --gen3D'.format(smiles, homedir))
+            fg = CheckMol.functionalGroups(self, file=homedir+'tmp.sdf', justFGcode=justFGcode, returnDataframe=returnDataframe)
             if deleteTMP:
-                os.remove(tmp_file+'tmp.sdf')
+                os.remove(homedir+'tmp.sdf')
             else:
                 pass
             return fg
         else:
-            smi2sdf = subprocess.getoutput('babel {} {}tmp.sdf --gen2D'.format(file, tmp_file))
-            fg = CheckMol.functionalGroups(self, file=tmp_file+'tmp.sdf', justFGcode=justFGcode, returnDataframe=returnDataframe)
+            smi2sdf = subprocess.getoutput('babel {} {}tmp.sdf --gen2D'.format(smiles, homedir))
+            fg = CheckMol.functionalGroups(self, file=homedir+'tmp.sdf', justFGcode=justFGcode, returnDataframe=returnDataframe)
             if deleteTMP:
-                os.remove(tmp_file+'tmp.sdf')
+                os.remove(homedir+'tmp.sdf')
+                os.remove(homedir+'smitmp.smiles')
             else:
                 pass
             return fg
@@ -84,12 +93,13 @@ class CheckMol:
         
 
 """ if __name__ == '__main__':
-    file = '/dados/programas/checkmol/mole3.sdf'
+    #file = '/dados/programas/checkmol/mole3.sdf'
     filesmi = '/dados/programas/checkmol/mole2.smiles'
+    smi = 'C1(C(C(C2(C(C1([H])[H])(C(C(=C(C2([H])[H])[H])C(=O)[H])(C(=O)[H])O[H])C([H])([H])[H])[H])(C([H])([H])[H])C([H])([H])[H])([H])[H])([H])[H]'
     cm = CheckMol()
     #get = cm.functionalGroups(file, justFGcode=True, returnDataframe=False)
     #print(get)
 
-    smi = cm.functionalGroupSmiles(file=filesmi, generate3D=False, justFGcode=True, returnDataframe=True,deleteTMP=True)
+    smi = cm.functionalGroupSmiles(smiles=smi, isString=True, generate3D=False, justFGcode=True, returnDataframe=True,deleteTMP=True)
     print(smi) """
 

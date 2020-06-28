@@ -1,0 +1,6 @@
+#!/bin/bash
+
+echo " "
+echo "Installing openbabel as a dependency (For distributions based on debian / ubuntu)."
+echo " "
+sudo apt-get install openbabel
