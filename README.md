@@ -3,16 +3,13 @@
 Still in development..
 
 # Install
-<b>Dependencies</b>
+<b>Dependencies:</b>
 python3-dev python3-pip<br>
-Ex: Distros based on Debian/ubuntu
+Ex: Distros based on Debian/ubuntu.
 ```
 $ sudo apt-get install python3-dev python3-pip
 ```
-Ex: for Linux opensuse
-```
-$ sudo zypper install python3-dev python3-pip
-```
+For linux opensuse these dependencies are already pre-installed.
 
 <b>Via github</b>
 ```
