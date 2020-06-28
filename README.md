@@ -1,1 +1,3 @@
-# pycheckmol
+# pyCheckmol
+
+Still in development
