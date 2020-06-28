@@ -5,7 +5,13 @@ import subprocess
 
 subprocess.run('checkmol-config', shell=True)
 
-if 'SUSE Linux' in platform.dist()[0]:
-    subprocess.run('openbabelSUSE-config', shell=True)
-else:
-    subprocess.run('openbabelDEBIANS-config', shell=True)
+get_distro = str(input('Is your Linux distribution based on Debian / Ubuntu?[yes/no]:\n'))
+get_distro = get_distro.lower()
+try:
+    if get_distro == 'yes' or get_distro == 'y' or get_distro == 'sim' or get_distro == '':
+        subprocess.run('openbabelDEBIANS-config', shell=True)
+    else:
+        subprocess.run('openbabelSUSE-config', shell=True)
+except:
+    print('Your distribution may not be supported. Try to install openbabel by yourself and make sure there is a PATH command called babel')
+    
