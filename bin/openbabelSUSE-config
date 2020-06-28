@@ -1,6 +1,0 @@
-#!/bin/bash
-
-echo " "
-echo "Installing openbabel as a dependency."
-echo " "
-sudo zypper install openbabel

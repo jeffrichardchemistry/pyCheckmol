@@ -1,11 +1,7 @@
 #!/usr/bin/env python
 
-import platform
+
 import subprocess
 
 subprocess.run('checkmol-config', shell=True)
-
-if 'SUSE Linux' in platform.dist()[0]:
-    subprocess.run('openbabelSUSE-config', shell=True)
-else:
-    subprocess.run('openbabelDEBIANS-config', shell=True)
+subprocess.run('openbabel-config', shell=True)

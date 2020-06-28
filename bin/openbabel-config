@@ -1,0 +1,16 @@
+#!/bin/bash
+
+echo "Its necessary to download openbabel2.3.2 bin for /usr/bin/ directory and openbabel lib to /usr/lib/. The root's passwords could be necessary."
+echo " "
+echo "Resolving openbabel binary......"
+sudo wget https://github.com/jeffrichardchemistry/pyCheckmol/raw/master/bin/openbabel/babel -P /usr/bin/ && sudo chmod +x /usr/bin/babel
+
+echo " "
+echo "Resolving openbabel lib"
+sudo wget https://github.com/jeffrichardchemistry/pyCheckmol/raw/master/bin/openbabel/libopenbabel.so.4 -P /usr/lib/ 
+
+
+
+
+
+
