@@ -92,7 +92,7 @@ class CheckMol:
                 return getdf.to_dict('list')
         
 
-""" if __name__ == '__main__':
+if __name__ == '__main__':
     #file = '/dados/programas/checkmol/mole3.sdf'
     filesmi = '/dados/programas/checkmol/mole2.smiles'
     smi = 'C1(C(C(C2(C(C1([H])[H])(C(C(=C(C2([H])[H])[H])C(=O)[H])(C(=O)[H])O[H])C([H])([H])[H])[H])(C([H])([H])[H])C([H])([H])[H])([H])[H])([H])[H]'
@@ -100,6 +100,6 @@ class CheckMol:
     #get = cm.functionalGroups(file, justFGcode=True, returnDataframe=False)
     #print(get)
 
-    smi = cm.functionalGroupSmiles(smiles=smi, isString=True, generate3D=False, justFGcode=True, returnDataframe=True,deleteTMP=True)
-    print(smi) """
+    smi = cm.functionalGroupSmiles(smiles=smi, isString=True, generate3D=False, justFGcode=True, returnDataframe=True,deleteTMP=False)
+    print(smi)
 
