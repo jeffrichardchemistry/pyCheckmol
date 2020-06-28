@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import platform
+
 import subprocess
 
 subprocess.run('checkmol-config', shell=True)
@@ -11,6 +11,7 @@ try:
     if get_distro == 'yes' or get_distro == 'y' or get_distro == 'sim' or get_distro == '':
         subprocess.run('openbabelDEBIANS-config', shell=True)
     else:
+        print('Installing for OpenSuse, if your distribution is another one try to install openbabel by yourself and make sure there is a PATH command called "obabel"\n')
         subprocess.run('openbabelSUSE-config', shell=True)
 except:
     print('Your distribution may not be supported. Try to install openbabel by yourself and make sure there is a PATH command called "obabel"')

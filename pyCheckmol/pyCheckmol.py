@@ -83,7 +83,7 @@ class CheckMol:
         """
         get = subprocess.getoutput('checkmol -p {}'.format(file))
         get = get.replace('#','')
-        self.information = subprocess.getoutput('checkmol -v {}'.format(file))
+        self.information_ = subprocess.getoutput('checkmol -v {}'.format(file))
         if justFGcode:
             get = [int(getline.replace(getline[3:], '')) for getline in get.splitlines()]
             return get
@@ -95,7 +95,7 @@ class CheckMol:
                 return getdf.to_dict('list')
         
 
-if __name__ == '__main__':
+""" if __name__ == '__main__':
     #file = '/dados/programas/checkmol/mole3.sdf'
     filesmi = '/dados/programas/checkmol/mole2.smiles'
     smi = 'C1(C(C(C2(C(C1([H])[H])(C(C(=C(C2([H])[H])[H])C(=O)[H])(C(=O)[H])O[H])C([H])([H])[H])[H])(C([H])([H])[H])C([H])([H])[H])([H])[H])([H])[H]'
@@ -104,5 +104,5 @@ if __name__ == '__main__':
     #print(get)
 
     smi = cm.functionalGroupSmiles(smiles=smi, isString=True, generate3D=False, justFGcode=True, returnDataframe=True,deleteTMP=False)
-    print(smi)
+    print(smi) """
 
