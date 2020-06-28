@@ -13,5 +13,5 @@ try:
     else:
         subprocess.run('openbabelSUSE-config', shell=True)
 except:
-    print('Your distribution may not be supported. Try to install openbabel by yourself and make sure there is a PATH command called babel')
+    print('Your distribution may not be supported. Try to install openbabel by yourself and make sure there is a PATH command called "obabel"')
     

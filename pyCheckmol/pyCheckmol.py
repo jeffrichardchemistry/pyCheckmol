@@ -16,7 +16,10 @@ class CheckMol:
         Arguments
         ---------------------
         smiles
-            Path to file, must be a smiles: .smiles or .smi
+            Smiles as a string or a Path to file, file must be a smiles extension: .smiles or .smi.
+        isString
+            If True a string must be passed in `smiles` argument, otherwise `smiles` argument
+            must be a path
         generate3D
             If true the smiles will be converted into a sdf with 3D coordinates.
             Openbabel run in backend. If False will be converted with 2D coordinates.
@@ -41,7 +44,7 @@ class CheckMol:
             smiles = homedir+'smitmp.smiles'
         
         if generate3D:
-            smi2sdf = subprocess.getoutput('babel {} {}tmp.sdf --gen3D'.format(smiles, homedir))
+            smi2sdf = subprocess.getoutput('obabel {} -O {}tmp.sdf --gen3D'.format(smiles, homedir))
             fg = CheckMol.functionalGroups(self, file=homedir+'tmp.sdf', justFGcode=justFGcode, returnDataframe=returnDataframe)
             if deleteTMP:
                 os.remove(homedir+'tmp.sdf')
@@ -49,7 +52,7 @@ class CheckMol:
                 pass
             return fg
         else:
-            smi2sdf = subprocess.getoutput('babel {} {}tmp.sdf --gen2D'.format(smiles, homedir))
+            smi2sdf = subprocess.getoutput('obabel {} -O {}tmp.sdf --gen2D'.format(smiles, homedir))
             fg = CheckMol.functionalGroups(self, file=homedir+'tmp.sdf', justFGcode=justFGcode, returnDataframe=returnDataframe)
             if deleteTMP:
                 os.remove(homedir+'tmp.sdf')
