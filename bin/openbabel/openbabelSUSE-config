@@ -1,0 +1,6 @@
+#!/bin/bash
+
+echo "Installing openbabel via zypper. The roots password could be necessary."
+echo " "
+echo " "
+sudo zypper install openbabel
