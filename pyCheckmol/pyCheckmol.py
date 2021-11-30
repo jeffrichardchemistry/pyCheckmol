@@ -1,11 +1,28 @@
 import subprocess
 import os
 import pandas as pd
+import numpy as np
 
 class CheckMol:
     def __init__(self):
         self.information_ = ''
 
+    def functionalGroupASbitvector(self, smiles = ''):
+        """This function returns a array of 0's and 1's that
+        represents the presence or absence of a functional group.
+        The first position of this array is always 0, because python
+        start a array as index 0. Here we Following the table 1-204 
+        (index) 
+
+        Args:
+            smiles (str, optional): Smiles as a string.
+        """
+        get_list = self.functionalGroupSmiles(smiles=smiles)
+        vet = np.zeros(205)
+        vet[get_list] = 1
+        
+        return vet
+        
     def functionalGroupSmiles(self, smiles = '', isString=True, generate3D=False,justFGcode=True, returnDataframe=True, deleteTMP=True):
         """
         This funtion returns the Functional groups (FG) information. Each FG is
@@ -16,7 +33,7 @@ class CheckMol:
         Arguments
         ---------------------
         smiles
-            Smiles as a string or a Path to file, file must be a smiles extension: .smiles or .smi.
+             or a Path to file, file must be a smiles extension: .smiles or .smi.
         isString
             If True a string must be passed in `smiles` argument, otherwise `smiles` argument
             must be a path
@@ -95,14 +112,13 @@ class CheckMol:
                 return getdf.to_dict('list')
         
 
-""" if __name__ == '__main__':
-    #file = '/dados/programas/checkmol/mole3.sdf'
-    filesmi = '/dados/programas/checkmol/mole2.smiles'
-    smi = 'C1(C(C(C2(C(C1([H])[H])(C(C(=C(C2([H])[H])[H])C(=O)[H])(C(=O)[H])O[H])C([H])([H])[H])[H])(C([H])([H])[H])C([H])([H])[H])([H])[H])([H])[H]'
+"""if __name__ == '__main__':
+    smi = '[C+](C[C-]C(C(O[H])=O)O[H])C'
     cm = CheckMol()
     #get = cm.functionalGroups(file, justFGcode=True, returnDataframe=False)
     #print(get)
 
-    smi = cm.functionalGroupSmiles(smiles=smi, isString=True, generate3D=False, justFGcode=True, returnDataframe=True,deleteTMP=False)
-    print(smi) """
+    #smi = cm.functionalGroupSmiles(smiles=smi, isString=True, generate3D=False, justFGcode=True, returnDataframe=True,deleteTMP=False)
+    #print(smi)
+    cm.functionalGroupASbitvector(smi)"""
 
