@@ -1,6 +1,6 @@
 # pyCheckmol
 
-Still in development..
+This is an application for detecting functional groups of a molecule, created using features from the compiled checkmol. This application was created thinking about providing a molecular descriptor in Python language for use in machine learning models.
 
 # Install
 <b>Dependencies:</b>
