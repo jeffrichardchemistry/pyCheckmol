@@ -1,0 +1,206 @@
+FG_number;FG_name;code 
+1;cation ;000000T2 
+2;anion ;000000T1 
+3;carbonyl compound ;C2O10000 
+4;aldehyde ;C2O1H000 
+5;ketone ;C2O1C000 
+6;thiocarbonyl compound ;C2S10000 
+7;thioaldehyde ;C2S1H000 
+8;thioketone ;C2S1C000 
+9;imine ;C2N10000 
+10;hydrazone ;C2N1N000 
+11;semicarbazone ;C2NNC4ON 
+12;thiosemicarbazone ;C2NNC4SN 
+13;oxime ;C2N1OH00 
+14;oxime ether ;C2N1OC00 
+15;ketene ;C3OC0000 
+16;ketene acetal derivative ;C3OCC000 
+17;carbonyl hydrate ;C2O2H200 
+18;hemiacetal ;C2O2HC00 
+19;acetal ;C2O2CC00 
+20;hemiaminal ;C2NOHC10 
+21;aminal ;C2N2CC10 
+22;thiohemiaminal ;C2NSHC10 
+23;thioacetal ;C2S2CC00 
+24;enamine ;C2CNH000 
+25;enol ;C2COH000 
+26;enolether ;C2COC000 
+27;hydroxy compound ;O1H00000 
+28;alcohol ;O1H0C000 
+29;prim. alcohol ;O1H1C000 
+30;sec. alcohol ;O1H2C000 
+31;tert. alcohol ;O1H3C000 
+32;1,2-diol ;O1H0CO1H 
+33;1,2-aminoalcohol ;O1H0CN1C 
+34;phenol ;O1H1A000 
+35;1,2-diphenol ;O1H2A000 
+36;enediol ;C2COH200 
+37;ether ;O1C00000 
+38;dialkylether ;O1C0CC00 
+39;alkylarylether ;O1C0CA00 
+40;diarylether ;O1C0AA00 
+41;thioether ;S1C00000 
+42;disulfide ;S1S1C000 
+43;peroxide ;O1O1C000 
+44;hydroperoxide ;O1O1H000 
+45;hydrazine derivative ;N1N10000 
+46;hydroxylamine ;N1O1H000 
+47;amine ;N1C00000 
+48;prim. amine ;N1C10000 
+49;prim. aliphat. amine ;N1C1C000 
+50;prim. aromat. amine ;N1C1A000 
+51;sec. amine ;N1C20000 
+52;sec. aliphat. amine ;N1C2CC00 
+53;sec. mixed amine (aryl alkyl) ;N1C2AC00 
+54;sec. aromat. amine ;N1C2AA00 
+55;tert. amine ;N1C30000 
+56;tert. aliphat. amine ;N1C3CC00 
+57;tert. mixed amine ;N1C3AC00 
+58;tert. arom_amine ;N1C3AA00 
+59;quaternary ammonium salt ;N1C400T2 
+60;N-oxide ;N0O10000 
+61;halogen deriv. ;XX000000 
+62;alkyl halide ;XX00C000 
+63;alkyl fluoride ;XF00C000 
+64;alkyl chloride ;XC00C000 
+65;alkyl bromide ;XB00C000 
+66;alkyl iodide ;XI00C000 
+67;aryl halide ;XX00A000 
+68;aryl fluoride ;XF00A000 
+69;aryl chloride ;XC00A000 
+70;aryl bromide ;XB00A000 
+71;aryl iodide ;XI00A000 
+72;organometallic compound ;000000MX 
+73;organolithium compound ;000000ML 
+74;organomagnesium compoun;d 000000MM 
+75;carboxylic acid deriv. ;C3O20000 
+76;carboxylic acid ;C3O2H000 
+77;carboxylic acid salt ;C3O200T1 
+78;carboxylic acid ester ;C3O2C000 
+79;lactone ;C3O2CZ00 
+80;carboxylic acid amide ;C3ONC000 
+81;carboxylic acid prim. amide ;C3ONC100 
+82;carboxylic acid sec. amide ;C3ONC200 
+83;carboxylic acid tert. amide ;C3ONC300 
+84;lactam ;C3ONCZ00 
+85;carboxylic acid hydrazide ;C3ONN100 
+86;carboxylic acid azide ;C3ONN200 
+87;hydroxamic acid ;C3ONOH00 
+88;carboxylic acid amidine ;C3N2H000 
+89;carboxylic acid amidrazone ;C3NNN100 
+90;nitrile ;C3N00000 
+91;acyl halide ;C3OXX000 
+92;acyl fluoride ;C3OXF000 
+93;acyl chloride ;C3OXC000 
+94;acyl bromide ;C3OXB000 
+95;acyl iodide ;C3OXI000 
+96;acyl cyanide ;C2OC3N00 
+97;imido ester ;C3NOC000 
+98;imidoyl halide ;C3NXX000 
+99;thiocarboxylic acid deriv. ;C3SO0000 
+100;thiocarboxylic acid ;C3SOH000 
+101;thiocarboxylic acid ester ;C3SOC000 
+102;thiolactone ;C3SOCZ00 
+103;thiocarboxylic acid amide ;C3SNH000 
+104;thiolactam ;C3SNCZ00 
+105;imidothioester ;C3NSC000 
+106;oxohetarene ;C3ONAZ00 
+107;thioxohetarene ;C3SNAZ00 
+108;iminohetarene ;C3NNAZ00 
+109;orthocarboxylic acid deriv. ;C3O30000 
+110;carboxylic acid orthoester ;C3O3C000 
+111;carboxylic acid amide acetal ;C3O3NC00 
+112;carboxylic acid anhydride ;C3O2C3O2 
+113;carboxylic acid imide ;C3ONC000 
+114;carboxylic acid unsubst. imid;e C3ONCH10 
+115;carboxylic acid subst. imide ;C3ONCC10 
+116;CO2 deriv. (general) ;C4000000 
+117;carbonic acid deriv. ;C4O30000 
+118;carbonic acid monoester ;C4O3C100 
+119;carbonic acid diester ;C4O3C200 
+120;carbonic acid ester halide ;C4O3CX00 
+121;thiocarbonic acid deriv. ;C4SO0000 
+122;thiocarbonic acid monoester ;C4SOC100 
+123;thiocarbonic acid diester ;C4SOC200 
+124;thiocarbonic acid ester halide ;C4SOX_00 
+125;carbamic acid deriv ;C4O2N000 
+126;carbamic acid ;C4O2NH00 
+127;carbamic acid ester ;C4O2NC00 
+;(urethane) ;
+128;carbamic acid halide ;C4O2NX00 
+129;thiocarbamic acid deriv. ;C4SN0000 
+130;thiocarbamic acid ;C4SNOH00 
+131;thiocarbamic acid ester ;C4SNOC00 
+132;thiocarbamic acid halide ;C4SNXX00 
+133;urea ;C4O1N200 
+134;isourea ;C4N2O100 
+135;thiourea ;C4S1N200 
+136;isothiourea ;C4N2S100 
+137;guanidine ;C4N30000 
+138;semicarbazide ;C4ON2N00 
+139;thiosemicarbazide ;C4SN2N00 
+140;azide ;N4N20000 
+141;azo compound ;N2N10000 
+142;diazonium salt ;N3N100T2 
+143;isonitrile ;N3C10000 
+144;cyanate ;C4NO1000 
+145;isocyanate ;C4NO2000 
+146;thiocyanate ;C4NS1000 
+147;isothiocyanate ;C4NS2000 
+148;carbodiimide ;C4N20000 
+149;nitroso compound ;N2O10000 
+150;nitro compound ;N4O20000 
+151;nitrite ;N3O20000 
+152;nitrate ;N4O30000 
+153;sulfuric acid deriv. ;S6O00000 
+154;sulfuric acid ;S6O4H000 
+155;sulfuric acid monoester ;S6O4HC00 
+156;sulfuric acid diester ;S6O4CC00 
+157;sulfuric acid amide ester ;S6O3NC00 
+158;sulfuric acid amide ;S6O3N100 
+159;sulfuric acid diamide ;S6O2N200 
+160;sulfuryl halide ;S6O3XX00 
+161;sulfonic acid deriv. ;S5O00000 
+162;sulfonic acid ;S5O3H000 
+163;sulfonic acid ester ;S5O3C000 
+164;sulfonamide ;S5O2N000 
+165;sulfonyl halide ;S5O2XX00 
+166;sulfone ;S4O20000 
+167;sulfoxide ;S2O10000 
+168;sulfinic acid deriv. ;S3O00000 
+169;sulfinic acid ;S3O2H000 
+170;sulfinic acid ester ;S3O2C000 
+171;sulfinic acid halide ;S3O1XX00 
+172;sulfinic acid amide ;S3O1N000 
+173;sulfenic acid deriv. ;S1O00000 
+174;sulfenic acid ;S1O1H000 
+175;sulfenic acid ester ;S1O1C000 
+176;sulfenic acid halide ;S1O0XX00 
+177;sulfenic acid amide ;S1O0N100 
+178;thiol ;S1H10000 
+179;alkylthiol ;S1H1C000 
+180;arylthiol ;S1H1A000 
+181;phosphoric acid deriv. ;P5O0H000 
+182;phosphoric acid ;P5O4H200 
+183;phosphoric acid ester ;P5O4HC00 
+184;phosphoric acid halide ;P5O3HX00 
+185;phosphoric acid amide ;P5O3HN00 
+186;thiophosphoric acid deriv. ;P5O0S000 
+187;thiophosphoric acid ;P5O3SH00 
+188;thiophosphoric acid ester ;P5O3SC00 
+189;thiophosphoric acid halide ;P5O2SX00 
+190;thiophosphoric acid amide ;P5O2SN00 
+191;phosphonic acid deriv. ;P4O30000 
+192;phosphonic acid ;P4O3H000 
+193;phosphonic acid ester ;P4O3C000 
+194;phosphine ;P3000000 
+195;phosphinoxide ;P2O00000 
+196;boronic acid deriv. ;B2O20000 
+197;boronic acid ;B2O2H000 
+198;boronic acid ester ;B2O2C000 
+199;alkene ;000C2C00 
+200;alkyne ;000C3C00 
+201;aromatic compound ;0000A000 
+202;heterocyclic compound ;0000CZ00 
+203;alpha-aminoacid ;C3O2HN1C 
+204;alpha-hydroxyacid ;C3O2HO1H 

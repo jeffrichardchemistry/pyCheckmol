@@ -5,7 +5,7 @@ with open("README.md", 'r') as fr:
 
 setup(
     name='pyCheckmol',
-    version='1.0.0',
+    version='1.1.0',
     url='https://github.com/jeffrichardchemistry/pyCheckmol',
     license='GNU GPL',
     author='Jefferson Richard',
@@ -16,6 +16,7 @@ setup(
     long_description_content_type = "text/markdown",
     packages=['pyCheckmol'],
     install_requires=['pandas>=0.25.3'],
+    include_package_data=True,
 	scripts=['bin/checkmol-config', 'bin/pycheckmol-config', 'bin/openbabel/openbabelDEBIANS-config','bin/openbabel/openbabelSUSE-config'],
 	classifiers = [
 		'Intended Audience :: Developers',
@@ -28,5 +29,6 @@ setup(
 		'Natural Language :: English',
 		'Operating System :: Unix',
 		'Programming Language :: Python :: 3',
-		'Programming Language :: Python :: 3.6']
+		'Programming Language :: Python :: 3.6',
+		'Programming Language :: Python :: 3.8']
 )

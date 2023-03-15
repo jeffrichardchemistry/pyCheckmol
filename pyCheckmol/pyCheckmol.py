@@ -3,6 +3,8 @@ import os
 import pandas as pd
 import numpy as np
 
+ABSOLUT_PATH = os.path.dirname(os.path.realpath(__file__))
+
 class CheckMol:
     def __init__(self):
         self.information_ = ''
@@ -106,6 +108,15 @@ class CheckMol:
             return get
         else:
             getdf = pd.DataFrame([x.split(':') for x in get.splitlines()], columns=['FG_code', 'n_atoms', 'Atoms_label'])
+            
+            path2fulltable = '{}/data/fg_list.csv'.format(ABSOLUT_PATH)
+            dftable = pd.read_csv(path2fulltable,sep=';')
+            
+            index2get = getdf['FG_code'].values.astype(int) - 1
+            df_filteredTable = dftable.iloc[index2get,:].reset_index(drop=True)
+            getdf = pd.concat([getdf,df_filteredTable.iloc[:,[1,2]]],axis=1,ignore_index=True)
+            getdf.columns = ['Functional Group Number', 'Frequency', 'Atom Position', 'Functional Group', 'Code']
+            getdf = getdf[['Functional Group','Frequency','Atom Position','Functional Group Number','Code']]
             if returnDataframe:
                 return getdf
             else:
@@ -113,12 +124,12 @@ class CheckMol:
         
 
 """if __name__ == '__main__':
-    smi = '[C+](C[C-]C(C(O[H])=O)O[H])C'
+    smi = 'CC1(C(N2C(S1)C(C2=O)NC(=O)C(C3=CC=C(C=C3)O)N)C(=O)O)C'
     cm = CheckMol()
     #get = cm.functionalGroups(file, justFGcode=True, returnDataframe=False)
     #print(get)
 
-    #smi = cm.functionalGroupSmiles(smiles=smi, isString=True, generate3D=False, justFGcode=True, returnDataframe=True,deleteTMP=False)
-    #print(smi)
-    cm.functionalGroupASbitvector(smi)"""
+    info = cm.functionalGroupSmiles(smiles=smi, isString=True, generate3D=False, justFGcode=False, returnDataframe=True,deleteTMP=False)
+    print(info)
+    #cm.functionalGroupASbitvector(smi)"""
 
