@@ -123,6 +123,22 @@ class CheckMol:
                 return getdf.to_dict('list')
         
 
+#Argsparse
+if __name__ == '__main__':
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-smi',"--smiles", help="Type molecules smiles. Ex: 'CC(=O)OC'")
+    parser.add_argument('-p', "--path", help="Type a path to molecules file.")
+    args = parser.parse_args()
+    
+    cm = CheckMol()
+    if args.smiles != None:
+        res = cm.functionalGroupSmiles(smiles=args.smiles, isString=True, generate3D=False, justFGcode=False, returnDataframe=True,deleteTMP=True)
+        print(res)
+    elif args.path != None:
+        res = cm.functionalGroups(file=args.path, justFGcode=False,returnDataframe=True)
+        print(res)
+    
 """if __name__ == '__main__':
     smi = 'CC1(C(N2C(S1)C(C2=O)NC(=O)C(C3=CC=C(C=C3)O)N)C(=O)O)C'
     cm = CheckMol()
